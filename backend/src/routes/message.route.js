@@ -12,7 +12,7 @@ router.post('/', async(req, res) => {
             filteredAudience
         }
 
-        const deliveryReceiptResponse = await fetch('http://localhost:8000/api/deliveryReceipt', {
+        const deliveryReceiptResponse = await fetch('https://crm-app-backend-cjvk.onrender.com/api/deliveryReceipt', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(deliveryReceiptPayload)
