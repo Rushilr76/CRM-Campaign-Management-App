@@ -6,7 +6,8 @@ const app = express()
 app.use(cors({
     origin: "https://crm-campaign-management-app-vdtw.vercel.app", 
     credentials: true,
-    methods: ["GET", "POST", "PUT"]
+    methods: ["GET", "POST", "PUT"],
+    allowedHeaders: ['Content-Type', 'Authorization']
 }))
 
 app.use(express.json({limit: "32kb"}))
