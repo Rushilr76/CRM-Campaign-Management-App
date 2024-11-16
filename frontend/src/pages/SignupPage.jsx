@@ -13,7 +13,7 @@ const SignupPage = () => {
     setErrorMessage(null) // Cleanup error message
 
     try {
-      const response = await fetch(`http://localhost:8000/api/auth/signup`, {
+      const response = await fetch(`https://crm-campaign-management-app.vercel.app/api/auth/signup`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({email, password }),
