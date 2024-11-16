@@ -4,7 +4,7 @@ import express from "express"
 const app = express()
 
 app.use(cors({
-    origin: ["https://crm-campaign-management-app-vdtw.vercel.app"], 
+    origin: "https://crm-campaign-management-app-vdtw.vercel.app", 
     credentials: true,
     methods: ["GET", "POST", "PUT"]
 }))
