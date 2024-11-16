@@ -14,7 +14,7 @@ const LoginPage = () => {
     setErrorMessage(null) // Cleanup error message
 
     try {
-      const response = await fetch('https://crm-campaign-management-app.vercel.app/api/auth/login', {
+      const response = await fetch('https://crm-app-backend-cjvk.onrender.com/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
@@ -38,7 +38,7 @@ const LoginPage = () => {
 
   const handleGoogleLoginSuccess = async (response) => {
     try {
-      const res = await fetch('https://crm-campaign-management-app.vercel.app/api/auth/google-login', {
+      const res = await fetch('https://crm-app-backend-cjvk.onrender.com/api/auth/google-login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ token: response.credential })

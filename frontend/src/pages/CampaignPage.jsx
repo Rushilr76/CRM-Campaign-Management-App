@@ -15,7 +15,7 @@ const CampaignPage = () => {
     const campaignName = location.state?.campaignName || "No Campaign Selected"
 
     useEffect(() => {
-        fetch("https://crm-campaign-management-app.vercel.app/api/campaigns")
+        fetch("https://crm-app-backend-cjvk.onrender.com/api/campaigns")
             .then((response) => response.json())
             .then((data) => {
                 setCampaigns(data)
@@ -31,7 +31,7 @@ const CampaignPage = () => {
         //     })
         //     .catch((error) => console.log("Error in fetching customers !! ", error))
 
-        fetch("https://crm-campaign-management-app.vercel.app/api/communicationLog")
+        fetch("https://crm-app-backend-cjvk.onrender.com/api/communicationLog")
             .then(response => response.json())
             .then((data) => {
                 const filtered = data.filter((audience) => audience.campaign === campaignName)
@@ -53,7 +53,7 @@ const CampaignPage = () => {
         }
 
         try {
-            const messageResponse = await fetch("https://crm-campaign-management-app.vercel.app/api/messages", {
+            const messageResponse = await fetch("https://crm-app-backend-cjvk.onrender.com/api/messages", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ currentCampaignMessage, campaignName, filteredAudience })
@@ -73,7 +73,7 @@ const CampaignPage = () => {
         }
 
         try {
-            const response = await fetch("https://crm-campaign-management-app.vercel.app/api/campaigns", {
+            const response = await fetch("https://crm-app-backend-cjvk.onrender.com/api/campaigns", {
                 method: "PUT",
                 headers: {'Content-Type' : 'application/json'},
                 body: JSON.stringify({campaignName, currentCampaignMessage})

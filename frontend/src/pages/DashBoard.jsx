@@ -43,19 +43,6 @@ const Dashboard = () => {
               </button>
             </div>
 
-            {/* Reports Section */}
-            {/* <div className="bg-blue-100 p-6 rounded-lg shadow-lg hover:bg-blue-200 transition">
-              <h2 className="text-xl font-semibold text-gray-800">Generate Reports</h2>
-              <p className="mt-2 text-gray-600">
-                Generate detailed reports to measure campaign success.
-              </p>
-              <button
-                onClick={() => navigate('/reports')}
-                className="mt-4 px-4 py-2 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700"
-              >
-                Go to Reports
-              </button>
-            </div> */}
           </div>
         </div>
       </main>

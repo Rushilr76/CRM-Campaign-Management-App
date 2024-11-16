@@ -14,7 +14,7 @@ const AudiencePage = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        fetch("https://crm-campaign-management-app.vercel.app/api/customers", {
+        fetch("https://crm-app-backend-cjvk.onrender.com/api/customers", {
         method: "GET",
         headers: { "Content-Type": "application/json" },
         })
@@ -134,7 +134,7 @@ const AudiencePage = () => {
 
             // console.log("Campaign: ", newCampaign)
             
-            const response = await fetch("https://crm-campaign-management-app.vercel.app/api/campaigns", {
+            const response = await fetch("https://crm-app-backend-cjvk.onrender.com/api/campaigns", {
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify(newCampaign)
@@ -160,7 +160,7 @@ const AudiencePage = () => {
                 }
             ))
 
-            const response = await fetch("https://crm-campaign-management-app.vercel.app/api/communicationLog", {
+            const response = await fetch("https://crm-app-backend-cjvk.onrender.com/api/communicationLog", {
                 method: "POST",
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify(communicationLogData)
