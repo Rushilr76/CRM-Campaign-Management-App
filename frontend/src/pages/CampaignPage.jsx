@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react"
 import { useLocation } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 
@@ -14,7 +15,14 @@ const CampaignPage = () => {
     const location = useLocation()
     const campaignName = location.state?.campaignName || "No Campaign Selected"
 
+    const navigate = useNavigate()
+
     useEffect(() => {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            navigate('/login'); // Redirect to login if not authenticated
+        }
+        
         fetch("https://crm-app-backend-cjvk.onrender.com/api/campaigns")
             .then((response) => response.json())
             .then((data) => {
