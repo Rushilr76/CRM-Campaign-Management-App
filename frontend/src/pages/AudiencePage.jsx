@@ -14,6 +14,13 @@ const AudiencePage = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
+        const token = localStorage.getItem('token');
+        if (!token) {
+        navigate('/login'); // Redirect to login if not authenticated
+        }
+    }, [navigate])
+
+    useEffect(() => {
         fetch("https://crm-app-backend-cjvk.onrender.com/api/customers", {
         method: "GET",
         headers: { "Content-Type": "application/json" },
