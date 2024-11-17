@@ -14,13 +14,11 @@ const AudiencePage = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        const token = localStorage.getItem('token');
+        const token = localStorage.getItem('token')
         if (!token) {
-        navigate('/login'); // Redirect to login if not authenticated
+            navigate('/login') // Redirect to login if not authenticated
         }
-    }, [navigate])
-
-    useEffect(() => {
+        
         fetch("https://crm-app-backend-cjvk.onrender.com/api/customers", {
         method: "GET",
         headers: { "Content-Type": "application/json" },
@@ -36,7 +34,7 @@ const AudiencePage = () => {
             console.log("Fetched customers: ", data)
         })
         .catch((error) => console.error("Error fetching customers !! ", error))
-    }, [])
+    }, [navigate])
 
     const addCondition = () => {
         setConditions([...conditions, { field: "", operator: "", value: "" }])
