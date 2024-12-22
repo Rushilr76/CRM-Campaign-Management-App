@@ -3,11 +3,7 @@ import express from "express"
 
 const app = express()
 
-app.use(cors({
-    origin: "https://crm-campaign-management-app-3pyj.onrender.com", 
-    credentials: true,
-    methods: ["GET", "POST", "PUT"]
-}))
+app.use(cors())
 
 app.use(express.json({limit: "32kb"}))
 app.use(express.urlencoded({limit: "32kb", extended: true}))
