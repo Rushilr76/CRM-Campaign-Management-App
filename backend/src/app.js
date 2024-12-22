@@ -20,7 +20,7 @@ import googleAuthRoutes from "./routes/google_auth.route.js"
 
 // default route
 app.get('/', (req, res) => {
-    res.send('Welcome to the CRM Backend API!')
+    res.status(200).json({ status: 'UP', timestamp: Date.now() })
 })
 
 app.use('/api/auth', authRoutes)
