@@ -22,6 +22,11 @@ import communicationLogRoutes from "./routes/communication_log.route.js"
 import deliveryReceiptRoutes from "./routes/deliveryReceipt.route.js"
 import googleAuthRoutes from "./routes/google_auth.route.js"
 
+// default route
+app.get('/', (req, res) => {
+    res.send('Welcome to the CRM Backend API!')
+})
+
 app.use('/api/auth', authRoutes)
 app.use('/api/customers', customerRoutes)
 app.use('/api/orders', orderRoutes)
